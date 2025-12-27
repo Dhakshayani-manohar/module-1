@@ -14,11 +14,6 @@
             scroll-behavior: smooth;
         }
 
-        .site-wrapper {
-            max-width: 1200px;
-            margin: auto;
-        }
-
         button:hover,
         .btn:hover {
             color: white;
@@ -54,18 +49,30 @@
             border-bottom: 3px solid chocolate
         }
 
-        .hero-img-big {
+        .bg-slide {
             width: 100%;
-            height: 400px;
-            overflow: hidden;
-
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-image: url("images/bg6.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
 
         }
 
-        .hero-img-small {
-            height: 260px;
-            overflow: hidden;
-            margin-top: 10px;
+        .bg-slide::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+
+        }
+
+        .hero-content {
+            position: relative;
+            min-height: 100vh;
+            z-index: 2;
         }
 
         .card-img-fluid {
@@ -124,9 +131,7 @@
         }
 
         .card-container {
-            border: 1px solid gold;
-            height: 300px;
-            text-align: center;
+            border: px solid;
             gap: 10px;
             box-shadow: 7px 7px 12px #1f1e1e88;
         }
@@ -177,48 +182,54 @@
 </head>
 
 <body>
-    <div class="site-wrapper">
-        <header>
-            <!-- navbar section -->
-            <nav class="navbar navbar-expand-lg bg-light fixed-top">
-                <div class="container">
-                    <div class="navbar-brand fs-4 fw-bold d-flex align-items-center ">
-                        <img src="images/beach.png" alt="" width="30px" height="30px" class="logo mb-2">
-                        <h2> TRAVO </h2>
-                    </div>
 
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
-                        <span class="navbar-toggler-icon "></span>
-                    </button>
-
-                    <div class="collapse navbar-collapse text-center bg-sm-secondary " id="menu">
-                        <ul class="navbar-nav mx-auto fs-5 fw-bold">
-                            <li class="nav-item"> <a class="nav-link" href="#home"> HOME</a></li>
-                            <li class="nav-item"> <a class="nav-link" href="#about"> ABOUT</a></li>
-                            <li class="nav-item"> <a class="nav-link" href="#page"> PAGES</a></li>
-                            <li class="nav-item"> <a class="nav-link" href="#blog"> BLOG</a></li>
-                            <li class="nav-item"> <a class="nav-link" href="#contact"> CONTACTS</a></li>
-                        </ul>
-                        <div>
-                            <button class="btn btn-primary"> Sign up </button>
-                        </div>
-                    </div>
-
+    <header>
+        <!-- navbar section -->
+        <nav class="navbar navbar-expand-lg bg-light fixed-top">
+            <div class="container">
+                <div class="navbar-brand fs-4 fw-bold d-flex align-items-center ">
+                    <img src="images/beach.png" alt="" width="30px" height="30px" class="logo mb-2">
+                    <h2> TRAVO<small class="text-warning">agency</small> </h2>
                 </div>
 
-            </nav>
-        </header>
-        <main>
-            <!-- hero section -->
-            <section id="home">
-                <div class="container min-vh-100  pt-5  align-items-center">
-                    <div class="row  w-100 align-items-center mt-3  pt-4 d-md-flex justify-content-center">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                    <span class="navbar-toggler-icon "></span>
+                </button>
+
+                <div class="collapse navbar-collapse text-center bg-sm-secondary " id="menu">
+                    <ul class="navbar-nav mx-auto fs-5 fw-bold">
+                        <li class="nav-item"> <a class="nav-link" href="#home"> HOME</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="#about"> ABOUT</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="#page"> PAGES</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="#blog"> BLOG</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="#contact"> CONTACTS</a></li>
+                    </ul>
+                    <div>
+                        <button class="btn btn-primary"> Sign up </button>
+                    </div>
+                </div>
+
+            </div>
+
+        </nav>
+    </header>
+    <main>
+        <!-- hero section -->
+        <section id="home">
+            <div class="bg-slide"></div>
+            <div class="container min-vh-100  pt-5  align-items-center">
+
+                <div class="hero-content min-vh-100 w-100 text-center my-5 pt-lg-3">
+                    <div class="row align-items-center mt-3  pt-4 d-md-flex justify-content-center">
 
 
-                        <div class="col-12 col-lg-6 col-md-6 ">
-                            <h1 class="card-tittle fs-1 fw-bold mt-4"> Discover the World's <span style="color: coral;">
+                        <div class="col-6 col-md-6 w-100  w-md-0  ">
+                            <h1 class="card-tittle fs-1 fw-bold mt-4 text-white"> Discover the World's <span
+                                    style="color: rgb(228, 72, 15);">
                                     Hidden </span>Wonders. </h1>
-                            <h3 class="card-text fs-5 mt-5 fst-italic lh-base "> Travel is not just about reaching a
+                            <h3 class="card-text fs-5 fs-md-3 fs-lg-3 mt-5 fst-italic lh-base text-white"> Travel is not just about
+                                reaching
+                                a
                                 destination, but about
                                 everything you feel along
                                 the way.
@@ -231,600 +242,622 @@
                                 about yourself. Discover beautiful destinations, book hotels, find the best travel
                                 deals,
                                 and
-                                create your perfect itinerary—all in one place.</h3><br><br>
-
-
-                        </div>
-
-                        <div class="col-6 col-lg-3 col-md-3 mt-2 mb-2   ">
-                            <div class="hero-img-big ">
-                                <img src="images/Best Place To Visit In Europe.jpg" alt=""
-                                    class="card-img-fluid rounded-4 ">
-                            </div>
-
-                        </div>
-                        <div class="col-6 col-lg-3 col-md-3 ">
-                            <div class="hero-img-small">
-                                <img src="images/The Colosseum, Rome.jpg" alt="" class="card-img-fluid  mb-2 rounded-4">
-                            </div>
-                            <div class="hero-img-small">
-
-                                <img src="images/p2.jpg" alt="" class="card-img-fluid   mb-2  rounded-4 ">
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="d-grid mx-auto gap-3 col-6 m-5">
-                        <button type="button" class="btn btn-warning  rounded-2 fw-bold fs-3 " data-bs-toggle="modal"
-                            data-bs-target="#enquiremodal"> ENQUIRE NOW </button>
-                        <a class="btn btn-warning  rounded-2 fw-bold fs-3" href="#booking"> BOOKINGS </a>
-                    </div>
-                </div>
-
-            </section>
-            <!-- top destination grid -->
-            <section id="about">
-                <div class="container   min-vh-100  mx-auto my-5 ">
-                    <h2 class="fw-bold text-center  mb-4 fs-md-1 fs-lg-1"> TOP DESTINATIONS</h2>
-                    <div class="container-grid   p-2 mx-auto my-5 ">
-                        <div class="row">
-                            <div class="col-6   col-lg-8  g-3">
-                                <div class=" img-box position-relative ">
-                                    <img src="images/n1.jpg" alt="" class="image rounded-4">
-
-                                    <h2 class="position-absolute bottom-0 start-0  fw-bold fs-5"
-                                        style="color:#FE0F65; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">
-                                        NEWYORK </h2>
-                                </div>
-
-                            </div>
-                            <div class="col-6   col-lg-4 g-3">
-                                <div class=" img-box position-relative  ">
-                                    <img src="images/switzerland.jpg" alt="" class="image  rounded-4 ">
-                                    <h2 class="position-absolute bottom-0 start-0  fw-bold fs-5"
-                                        style="color:#FE0F65; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">
-                                        SWITZERLAND
-                                    </h2>
-                                </div>
-                            </div>
-
-
-                        </div>
-                        <div class="row">
-                            <div class="col-6   col-lg-4 g-3">
-                                <div class=" img-box  position-relative  ">
-                                    <img src="images/r1.jpg" alt="" class="image rounded-4 ">
-                                    <h2 class="position-absolute bottom-0 start-0 fw-bold fs-5"
-                                        style="color:#FE0F65; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">
-                                        ROME </h2>
-                                </div>
-                            </div>
-                            <div class="col-6   col-lg-4 g-3">
-                                <div class=" img-box  position-relative ">
-                                    <img src="images/colombia.jpg" alt="" class="image  rounded-4 ">
-                                    <h2 class="position-absolute bottom-0 start-0 fw-bold fs-5"
-                                        style="color:#FE0F65; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">
-                                        COLOMBIA </h2>
-                                </div>
-                            </div>
-                            <div class="col-12   col-lg-4 g-3">
-                                <div class=" img-box     position-relative  ">
-                                    <img src="images/portugul.jpg" alt="" class="image  rounded-4 ">
-                                    <h2 class="position-absolute bottom-0 start-0  fw-bold fs-5 "
-                                        style="color:#FE0F65; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">
-                                        PORTUGAL </h2>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="row">
-                            <div class="col-6   col-lg-4 g-3">
-                                <div class=" img-box  position-relative  ">
-                                    <img src="images/l1.jpg" alt="" class="image  rounded-4 ">
-                                    <h2 class="position-absolute bottom-0 start-0  fw-bold fs-5"
-                                        style="color:#FE0F65; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">
-                                        LONDON </h2>
-                                </div>
-                            </div>
-                            <div class="col-6   col-lg-8 g-3">
-                                <div class=" img-box  position-relative ">
-                                    <img src="images/sydney.jpg" alt="" class="image rounded-4 ">
-
-                                    <h2 class="position-absolute bottom-0 start-0  fw-bold fs-5"
-                                        style="color:#FE0F65; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">
-                                        SYDNEY </h2>
-                                </div>
-
+                                create your perfect itinerary—all in one place.</h3><br>
+                            <div class=" d-grid mx-auto gap-3 col-10 col-md-10 col-lg-6 mt-5 mt-md-0 mt-lg-3">
+                                <button type="button" class="btn btn-warning  rounded-2 fw-bold fs-3 "
+                                    data-bs-toggle="modal" data-bs-target="#enquiremodal"> ENQUIRE NOW </button>
+                                <a class="btn btn-warning  rounded-2 fw-bold fs-3" href="#booking"> BOOKINGS </a>
                             </div>
 
                         </div>
                     </div>
                 </div>
-            </section>
 
-            <section>
+            </div>
 
+        </section>
+        <section id="page">
+            <div class=" container h-100 my-5 mx-auto">
+                <h2 class="fw-bold text-center  mb-4 fs-md-1 fs-lg-1">TO CHOOSE US </h2>
 
-                <!--  card section -->
+                <div class="row d-flex justify-content-evenly align-items-center ">
+                    <div class=" col-12  col-lg-6 mx-auto mt-3 justify-content-center">
+                        <ul class="  me-5  1h-lg " style="list-style: none;">
+                            <li class="fs-2"><span class="text-danger fw-bold fs-1">Flat 30% </span>1st trip in our
+                                agency </li>
+                            <li class="fs-2"> Festive Travel<span class="text-danger fw-bold fs-1"> Offers </span> You
+                                Can’t Miss</li>
+                            <li class="fs-2"> Special<span class="text-danger fw-bold fs-1"> Discounts </span> on Group
+                                Bookings</li>
+                            <li class="fs-2"> Register Today for <span class="text-danger fw-bold fs-1">Special Offers
+                                </span></li>
+                        </ul>
+                    </div>
+                    <div class="col-12   col-lg-6">
+                        <img src="images/img1.jpg" alt="" class="s-image  w-100  h-100">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- top destination grid -->
+        <section id="about">
+            <div class="container  min-vh-100 mx-auto my-3">
+                <h2 class="fw-bold text-center  mb-4 fs-md-1 fs-lg-1"> TOP DESTINATIONS</h2>
+                <div class="container-grid  mx-auto my-5  ">
+                    <div class="row ">
+                        <div class="col-6   col-lg-8  g-3">
+                            <div class=" img-box position-relative ">
+                                <img src="images/n1.jpg" alt="" class="image rounded-4">
 
-                <div class="container  h-100  mx-auto my-5  " id="page">
-                    <div class="row g-3 fs-6 fs-lg-5 my-5 ">
+                                <h2 class="position-absolute bottom-0 start-0  fw-bold fs-5" 
+                                    style="color:#FE0F65; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">
+                                    NEWYORK </h2>
+                            </div>
 
-                        <div class=" col-10  col-md-6  col-lg-4  mx-auto my-5">
-                            <div class="card-container rounded-4">
-
-                                <img src="images/tourism.png" alt="" class="card-img mt-4"
-                                    style="width: 80px; height: 80px;">
-                                <h2 class="card-tittle mt-3"> Abroad trips </h2>
-                                <h3 class="card-text lead mt-3"> For the last decade,Travo have organized more than
-                                    50,000
-                                    international itineraries</h3>
+                        </div>
+                        <div class="col-6   col-lg-4 g-3">
+                            <div class=" img-box position-relative  ">
+                                <img src="images/switzerland.jpg" alt="" class="image  rounded-4 ">
+                                <h2 class="position-absolute bottom-0 start-0  fw-bold fs-5"
+                                    style="color:#FE0F65; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">
+                                    SWITZERLAND
+                                </h2>
                             </div>
                         </div>
-
-
-                        <div class=" col-10  col-md-6 col-lg-4 mx-auto my-5">
-                            <div class="card-container rounded-4">
-                                <img src="images/pin.png" alt="" class="card-img mt-4"
-                                    style="width: 80px; height: 80px;">
-                                <h2 class="card-tittle mt-3"> Experiences </h2>
-                                <h3 class="card-text lead mt-3"> Each and every itinerary is customized according to the
-                                    taste of
-                                    the customers.</h3>
-                            </div>
-                        </div>
-
-
-                        <div class=" col-10  col-md-6 col-lg-4 mx-auto my-5">
-                            <div class="card-container rounded-4">
-                                <img src="images/photograph.png" alt="" class="card-img mt-4"
-                                    style="width: 80px; height: 80px;">
-                                <h2 class="card-tittle mt-3"> Happy travellers </h2>
-                                <h3 class="card-text lead mt-3"> Travo holds record of great customer satisfaction and
-                                    all
-                                    customers are retained with us</h3>
-                            </div>
-                        </div>
-
 
 
                     </div>
-                </div>
-            </section>
-            <!-- mail section -->
-            <section>
-                <div class="container  h-100  my-5  bg-warning rounded-4">
-
-                    <div class=" row d-flex align-items-center justify-content-center mb-4 g-3 ">
-                        <div class=" col   col-md-6  col-lg-6   d-flex align-items-center justify-content-center g-3">
-                            <div>
-                                <img src="images/envelope.png" alt="" width="80px" height="80px" class="mail.img me-5">
+                    <div class="row">
+                        <div class="col-6   col-lg-4 g-3">
+                            <div class=" img-box  position-relative  ">
+                                <img src="images/r1.jpg" alt="" class="image rounded-4 ">
+                                <h2 class="position-absolute bottom-0 start-0 fw-bold fs-5"
+                                    style="color:#FE0F65; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">
+                                    ROME </h2>
                             </div>
-                            <div>
-                                <h1 class="fs-lg-1"> Get Updates & more </h1>
-                                <h3 class="fs-lg-3 lead "> Make your dream trip </h3>
+                        </div>
+                        <div class="col-6   col-lg-4 g-3">
+                            <div class=" img-box  position-relative ">
+                                <img src="images/colombia.jpg" alt="" class="image  rounded-4 ">
+                                <h2 class="position-absolute bottom-0 start-0 fw-bold fs-5"
+                                    style="color:#FE0F65; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">
+                                    COLOMBIA </h2>
+                            </div>
+                        </div>
+                        <div class="col-12   col-lg-4 g-3">
+                            <div class=" img-box     position-relative  ">
+                                <img src="images/portugul.jpg" alt="" class="image  rounded-4 ">
+                                <h2 class="position-absolute bottom-0 start-0  fw-bold fs-5 "
+                                    style="color:#FE0F65; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">
+                                    PORTUGAL </h2>
                             </div>
                         </div>
 
-                        <div class="  col col-md-6 col-lg-6 mb-3 ">
-                            <form class="d-flex me-2 ">
-                                <input class="form-control form-control-lg" type="email" placeholder="Your Email">
-                                <button class="btn btn-dark me-2 "> SUBSCRIBE</button>
-                            </form>
+                    </div>
+                    <div class="row">
+                        <div class="col-6   col-lg-4 g-3">
+                            <div class=" img-box  position-relative  ">
+                                <img src="images/l1.jpg" alt="" class="image  rounded-4 ">
+                                <h2 class="position-absolute bottom-0 start-0  fw-bold fs-5"
+                                    style="color:#FE0F65; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">
+                                    LONDON </h2>
+                            </div>
                         </div>
+                        <div class="col-6   col-lg-8 g-3">
+                            <div class=" img-box  position-relative ">
+                                <img src="images/sydney.jpg" alt="" class="image rounded-4 ">
+
+                                <h2 class="position-absolute bottom-0 start-0  fw-bold fs-5"
+                                    style="color:#FE0F65; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">
+                                    SYDNEY </h2>
+                            </div>
+
+                        </div>
+
                     </div>
                 </div>
-            </section>
-            <!-- testimonials -->
-            <section>
-                <div class="container  h-100  mx-auto my-5  ">
-                    <div>
-                        <h2 class="fw-bold text-center  mb-4 fs-md-1 fs-lg-1"> OUR TESTIMONIALS </h2>
-                        <div class="row">
-                            <div class=" col-10 col-md-6 col-lg-4  mx-auto my-5 ">
-                                <div class="card-container rounded-4 position-relative mt-4 p-2">
-                                    <div class="card-header">
-                                        <img src="images/user.png" alt="" class="card-img position-absolute"
-                                            style="width: 80px; height: 80px; top:-40px; left:50%; transform: translateX(-50%);">
-                                    </div>
-                                    <div class="card-body mt-5">
-                                        <h2 class="card-tittle  "> Liam Young </h2>
+            </div>
+        </section>
 
-                                        <div class="stars">★★★★★</div>
-                                        <h3 class="card-text lead mt-3 "> “This app made my entire trip planning so
-                                            easy.
-                                            Highly
-                                            recommended!”</h3>
-                                    </div>
-                                </div>
+        <section>
 
-                            </div>
-                            <div class=" col-10 col-md-6 col-lg-4  mx-auto my-5 ">
-                                <div class="card-container rounded-4 position-relative mt-4 p-2">
-                                    <div class="card-header">
-                                        <img src="images/user.png" alt="" class="card-img position-absolute"
-                                            style="width: 80px; height: 80px; top:-40px; left:50%; transform: translateX(-50%);">
-                                    </div>
-                                    <div class="card-body mt-5">
-                                        <h2 class="card-tittle  "> Kevin </h2>
 
-                                        <div class="stars">★★★★★</div>
-                                        <h3 class="card-text lead mt-3 "> “Reliable app for both business and leisure
-                                            travel.”</h3>
-                                    </div>
-                                </div>
+            <!--  card section -->
 
-                            </div>
-                            <div class=" col-10 col-md-6 col-lg-4  mx-auto my-5 ">
-                                <div class="card-container rounded-4 position-relative mt-4 p-2">
-                                    <div class="card-header">
-                                        <img src="images/user.png" alt="" class="card-img position-absolute"
-                                            style="width: 80px; height: 80px; top:-40px; left:50%; transform: translateX(-50%);">
-                                    </div>
-                                    <div class="card-body mt-5">
-                                        <h2 class="card-tittle  "> Louis </h2>
+            <div class="container  h-100  mx-auto my-5  " id="page">
+                <div class="row g-3 fs-6 fs-lg-5 my-5 text-center mt-3 mb-3 ">
 
-                                        <div class="stars">★★★★★</div>
-                                        <h3 class="card-text lead mt-3 "> “Saved me time and money on my last trip.”
-                                        </h3>
-                                    </div>
-                                </div>
+                    <div class=" col-10  col-md-6  col-lg-4  mx-auto my-5">
+                        <div class="card-container rounded-4 " style=" height: 250px;">
 
-                            </div>
+                            <img src="images/tourism.png" alt="" class="card-img mt-4"
+                                style="width: 80px; height: 80px;">
+                            <h2 class="card-tittle mt-3"> Abroad trips </h2>
+                            <h3 class="card-text lead mt-3"> For the last decade,Travo have organized more than
+                                50,000
+                                international itineraries</h3>
                         </div>
                     </div>
 
-                </div>
-            </section>
-            <!-- booking section -->
-            <section id="booking">
-                <div class="container h-100 mx-auto my-5">
-                    <div>
-                        <h2 class="fw-bold text-center  mb-4 fs-md-1 fs-lg-1"> FOR BOOKING! </h2>
-                        <h3 style="text-align: center;"> “Fast, safe & secure bookings.”</h3>
-                        <div class="row justify-content-center my-5 g-3 ">
-                            <div class="col-12 col-md-8 col-lg-8 ">
-                                <form>
-                                    <div class="row justify-content-center g-3 mb-4 ">
-                                        <div class=" col-12 col-md-12 col-lg-6">
-                                            <input
-                                                class="form-control form-control-sm fw-bold border border-secondary-subtle"
-                                                type="text" placeholder="First name*" aria-label="firstname" required>
 
-                                        </div>
-                                        <div class="col-12 col-md-12   col-lg-6">
-                                            <input
-                                                class="form-control form-control-sm fw-bold border border-secondary-subtle"
-                                                type="text" placeholder=" Last name*" aria-label="lastname" required>
-
-                                        </div>
-
-                                    </div>
-                                    <div class="row justify-content-center g-3 mb-4">
-                                        <div class="col-12 col-md-12    col-lg-6">
-                                            <input
-                                                class="form-control form-control-sm fw-bold border border-secondary-subtle"
-                                                type="email" placeholder="Mail*" aria-label="mail" required>
-
-                                        </div>
-                                        <div class="col-12 col-md-12   col-lg-6">
-                                            <input
-                                                class="form-control form-control-sm fw-bold border border-secondary-subtle"
-                                                type="text" placeholder="City of Residency*" aria-label="username"
-                                                required>
-
-                                        </div>
-
-                                    </div>
-                                    <div class="row justify-content-center g-3 mb-4">
-                                        <div class="col-12 col-md-12  col-lg-6">
-                                            <input
-                                                class="form-control form-control-sm fw-bold border border-secondary-subtle"
-                                                type="tel" placeholder="Phonenumber*" aria-label="ph number" required>
-
-                                        </div>
-                                        <div class=" col-12 col-md-12 col-lg-6">
-                                            <input
-                                                class="form-control form-control-sm fw-bold border border-secondary-subtle"
-                                                type="tel" placeholder="whatsapp number*" aria-label="number" required>
-
-                                        </div>
-
-                                    </div>
-                                    <div class="row justify-content-center g-3 mb-4">
-                                        <div class=" col-12 col-md-12 col-lg-6">
-                                            <input
-                                                class="form-control form-control-sm fw-bold border border-secondary-subtle"
-                                                type="text" placeholder="Travel Destination*" aria-label="destination"
-                                                required>
-
-                                        </div>
-                                        <div class=" col-12 col-md-12 col-lg-6">
-                                            <input
-                                                class="form-control form-control-sm fw-bold border border-secondary-subtle"
-                                                type="date" placeholder="Date of travel*" aria-label="date" required>
-                                        </div>
-
-                                    </div>
-                                    <div class="row justify-content-center g-3 mb-4">
-                                        <div class=" col-12 col-md-12 col-lg-6">
-                                            <input
-                                                class="form-control form-control-sm fw-bold border border-secondary-subtle"
-                                                type="number" placeholder="No.of.people*" aria-label="number" required>
-
-                                        </div>
-                                        <div class=" col-12 col-md-12 col-lg-6">
-                                            <select
-                                                class="form-select form-select-sm fw-medium border border-secondary-subtle">
-                                                <option selected>Vacation type*</option>
-                                                <option value="">Honey moon trip</option>
-                                                <option value="">Family trip</option>
-                                                <option value="">Friends trip</option>
-                                                <option value="">Corporate trip</option>
-
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="d-grid g-3  col-12 col-md-4 col-lg-4 mx-auto">
-                                        <button class="btn btn-warning"> SUBMIT </button>
-                                    </div>
-                                </form>
-
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- blog section -->
-            <section id="blog">
-                <div class="container h-100 mx-auto my-5">
-
-                    <h2 class="fw-bold text-center  mb-4 fs-md-1 fs-lg-1"> Latest Blogs </h2>
-                    <!-- slide start -->
-                    <!-- slide for blogs -->
-
-                    <div id="cardslider" class="carousel slide" data-bs-ride="false">
-
-                        <!-- dots for slide -->
-                        <div class="carousel-indicators">
-                            <button data-bs-target="#cardslider" data-bs-slide-to="0" class="active"></button>
-                            <button data-bs-target="#cardslider" data-bs-slide-to="1"></button>
-                        </div>
-
-                        <div class="carousel-inner">
-                            <!-- slide-1 -->
-                            <div class="carousel-item active">
-
-                                <div class="row g-3 justify-content-center">
-
-                                    <div class="col-10  col-md-8 col-lg-4   ">
-                                        <div class="card h-100">
-                                            <div class="blog-img-box mt-2">
-                                                <img src="images/netherland.jpg" alt="" class="blog-img">
-                                            </div>
-                                            <h3 class="text-center fs-2"> Best time to Travel... </h3>
-                                        </div>
-                                    </div>
-
-
-                                    <div class="col-10  col-md-8     col-lg-4    ">
-                                        <div class="card h-100">
-                                            <div class="blog-img-box mt-2">
-                                                <img src="images/k1.jpg" alt="" class="blog-img">
-                                            </div>
-                                            <h3 class="text-center fs-2"> Travelling guide... </h3>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-10  col-md-8  col-lg-4 ">
-                                        <div class="card h-100">
-                                            <div class="blog-img-box mt-2">
-                                                <img src="images/barcelona.jpg" alt="" class="blog-img">
-                                            </div>
-                                            <h3 class="text-center fs-2"> To Barcelona trip ... </h3>
-                                        </div>
-                                    </div>
-
-                                    <div class="d-grid g-1 col-12 col-md-6 col-lg-4  mt-4   mx-auto">
-                                        <button class="btn btn-warning fw-bold"> BLOGS </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- slide-2 -->
-                            <div class="carousel-item">
-
-                                <div class="row g-3  justify-content-center">
-
-                                    <div class="col-10  col-md-8 col-lg-4 ">
-                                        <div class="card h-100">
-                                            <div class="blog-img-box mt-2">
-                                                <img src="images/greece.jpg" alt="" class="blog-img">
-                                            </div>
-                                            <h3 class="text-center fs-2"> Best time to Travel... </h3>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-10   col-md-8 col-lg-4 ">
-                                        <div class="card h-100">
-                                            <div class="blog-img-box mt-2">
-                                                <img src="images/asia.jpg" alt="" class="blog-img">
-                                            </div>
-                                            <h3 class="text-center fs-2"> Travelling guide... </h3>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-10 col-md-8 col-lg-4  ">
-                                        <div class="card h-100">
-                                            <div class="blog-img-box mt-2">
-                                                <img src="images/mal.jpg" alt="" class="blog-img">
-                                            </div>
-                                            <h3 class="text-center fs-2"> To maldives trip ... </h3>
-                                        </div>
-                                    </div>
-
-                                    <div class="d-grid g-1 col-12 col-md-6 col-lg-4 mx-auto">
-                                        <button class="btn btn-warning fw-bold mt-3"> BLOGS </button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- arrow mark -->
-                            <button class="carousel-control-prev arrow-btn" data-bs-target="#cardslider"
-                                data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon"></span>
-                            </button>
-
-                            <button class="carousel-control-next arrow-btn" data-bs-target="#cardslider"
-                                data-bs-slide="next">
-                                <span class="carousel-control-next-icon"></span>
-                            </button>
+                    <div class=" col-10  col-md-6 col-lg-4 mx-auto my-5">
+                        <div class="card-container rounded-4" style=" height: 250px;">
+                            <img src="images/pin.png" alt="" class="card-img mt-4" style="width: 80px; height: 80px;">
+                            <h2 class="card-tittle mt-3"> Experiences </h2>
+                            <h3 class="card-text lead mt-3"> Each and every itinerary is customized according to the
+                                taste of
+                                the customers.</h3>
                         </div>
                     </div>
 
+
+                    <div class=" col-10  col-md-6 col-lg-4 mx-auto my-5">
+                        <div class="card-container rounded-4" style=" height: 250px;">
+                            <img src="images/photograph.png" alt="" class="card-img mt-4"
+                                style="width: 80px; height: 80px;">
+                            <h2 class="card-tittle mt-3"> Happy travellers </h2>
+                            <h3 class="card-text lead mt-3"> Travo holds record of great customer satisfaction and
+                                all
+                                customers are retained with us</h3>
+                        </div>
+                    </div>
+
+
+
                 </div>
-            </section>
-            <!--  modal  -->
-            <section>
-                <div class="modal fade" id="enquiremodal" tabindex="-1">
-                    <div class="modal-dialog modal-dialog-centered modal-lg">
-                        <div class="modal-content">
+            </div>
+        </section>
+        <!-- mail section -->
+        <section>
+            <div class="container  h-100  my-5 ">
+
+                <div class=" row d-flex align-items-center justify-content-center mb-4 g-3 ">
+                    <div class=" col   col-md-6  col-lg-6   d-flex align-items-center justify-content-center g-3">
+                        <div>
+                            <img src="images/envelope.png" alt="" width="80px" height="80px" class="mail.img me-5">
+                        </div>
+                        <div>
+                            <h1 class="fs-lg-1"> Get Updates & more </h1>
+                            <h3 class="fs-lg-3 lead "> Make your dream trip </h3>
+                        </div>
+                    </div>
+
+                    <div class="  col col-md-6 col-lg-6 mb-3 ">
+                        <form class="d-flex me-2 ">
+                            <input class="form-control form-control-lg" type="email" placeholder="Your Email">
+                            <button class="btn btn-dark me-2 "> SUBSCRIBE</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- testimonials -->
+        <section>
+            <div class="container  h-100  mx-auto my-5  ">
+                <div>
+                    <h2 class="fw-bold text-center  mb-4 fs-md-1 fs-lg-1"> OUR TESTIMONIALS </h2>
+                    <div class="row ">
+                        <div class="d-flex justify-content-center ">
+                            
+                                <div class=" col-lg-6 col-md-6 d-none d-lg-flex">
+                                    <img src="images/side image.jpg" alt="" class="side-img w-100 h-100 ">
+                                </div>
+
+                            
+
+
+                            <div class="row  ">
+                                <div class=" col-10 col-md-12 col-lg-10 mx-auto  ">
+                                    <div
+                                        class="card-container d-flex justify-content-center align-items-center rounded-4 mt-4 p-2 ">
+                                        <div class="card-header">
+                                            <img src="images/user.png" alt="" class="card-img "
+                                                style="width: 80px; height: 80px;">
+                                        </div>
+                                        <div class="card-body text-left ">
+                                            <h2 class="card-text">Saratha,chennai </h2>
+
+                                            <div class="stars ">★★★★★</div>
+                                            <h3 class="card-text lead "> “This app made my entire trip planning so
+                                                easy.
+                                                Highly
+                                                recommended!”</h3>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                                <div class=" col-10 col-md-12 col-lg-10 mx-auto ">
+                                    <div
+                                        class="card-container d-flex justify-content-center align-items-center rounded-4 mt-4 p-2">
+                                        <div class="card-header">
+                                            <img src="images/user.png" alt="" class="card-img "
+                                                style="width: 80px; height: 80px;">
+                                        </div>
+                                        <div class="card-body ">
+                                            <h2 class="card-text"> Vignesh,trichy</h2>
+
+                                            <div class="stars">★★★★★</div>
+                                            <h3 class="card-text lead"> “Reliable app for both business and leisure
+                                                travel.”</h3>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                                <div class=" col-10 col-md-12 col-lg-10 mx-auto">
+                                    <div
+                                        class="card-container d-flex justify-content-center align-items-center rounded-4  mt-4 p-2">
+                                        <div class="card-header">
+                                            <img src="images/user.png" alt="" class="card-img"
+                                                style="width: 80px; height: 80px;">
+                                        </div>
+                                        <div class="card-body">
+                                            <h2 class="card-text">prithi, coimbatore </h2>
+
+                                            <div class="stars">★★★★★</div>
+                                            <h3 class="card-text lead "> “Saved me time and money on my last trip.”
+                                            </h3>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+        </section>
+        <!-- booking section -->
+        <section id="booking">
+            <div class="container h-100 mx-auto my-5">
+                <div>
+                    <h2 class="fw-bold text-center  mb-4 fs-md-1 fs-lg-1"> FOR BOOKING! </h2>
+                    <h3 style="text-align: center;"> “Fast, safe & secure bookings.”</h3>
+                    <div class="row justify-content-center my-5 g-3 ">
+                        <div class="col-12 col-md-8 col-lg-8 ">
                             <form>
+                                <div class="row justify-content-center g-3 mb-4 ">
+                                    <div class=" col-12 col-md-12 col-lg-6">
+                                        <input
+                                            class="form-control form-control-sm fw-bold border border-secondary-subtle"
+                                            type="text" placeholder="First name*" aria-label="firstname" required>
 
-                                <div class="modal-header border-0 m-1 bg-warning">
-                                    <h3 class="modal-tittle fs-3 text-center w-100"> ENQUIRE NOW </h3>
-                                    <button type="button" class="btn-close " data-bs-dismiss="modal"> </button>
-                                </div>
-                                <div class="modal-body border-0">
-                                    <div class="row justify-content-center gap-3">
-                                        <div class=" col-10  col-lg-12">
-                                            <input
-                                                class="form-control form-control-sm fw-bold border border-secondary-subtle"
-                                                type="text" placeholder="name*" aria-label="name" required>
-
-                                        </div>
-                                        <div class="col-10  col-lg-12">
-                                            <input
-                                                class="form-control form-control-sm fw-bold border border-secondary-subtle"
-                                                type="email" placeholder="Mail*" aria-label="mail" required>
-
-                                        </div>
-                                        <div class=" col-10  col-lg-12">
-                                            <input
-                                                class="form-control form-control-sm fw-bold border border-secondary-subtle"
-                                                type="tel" placeholder="whatsapp number*" aria-label="number" required>
-
-                                        </div>
-                                        <div class=" col-10  col-lg-12">
-                                            <input
-                                                class="form-control form-control-sm fw-bold border border-secondary-subtle"
-                                                type="text" placeholder="Travel Destination*" aria-label="destination"
-                                                required>
-
-                                        </div>
-                                        <div class=" col-10 col-lg-12">
-                                            <input
-                                                class="form-control form-control-sm fw-bold border border-secondary-subtle"
-                                                type="date" placeholder="Date of travel*" aria-label="date" required>
-                                        </div>
                                     </div>
-                                </div>
-                                <div class="modal-footer border-0">
-                                    <div class="d-grid g-1 col-10 col-lg-12 mx-auto">
-                                        <button class="btn btn-warning fw-bold"> SUBMIT </button>
+                                    <div class="col-12 col-md-12   col-lg-6">
+                                        <input
+                                            class="form-control form-control-sm fw-bold border border-secondary-subtle"
+                                            type="text" placeholder=" Last name*" aria-label="lastname" required>
+
                                     </div>
 
+                                </div>
+                                <div class="row justify-content-center g-3 mb-4">
+                                    <div class="col-12 col-md-12    col-lg-6">
+                                        <input
+                                            class="form-control form-control-sm fw-bold border border-secondary-subtle"
+                                            type="email" placeholder="Mail*" aria-label="mail" required>
+
+                                    </div>
+                                    <div class="col-12 col-md-12   col-lg-6">
+                                        <input
+                                            class="form-control form-control-sm fw-bold border border-secondary-subtle"
+                                            type="text" placeholder="City of Residency*" aria-label="username" required>
+
+                                    </div>
+
+                                </div>
+                                <div class="row justify-content-center g-3 mb-4">
+                                    <div class="col-12 col-md-12  col-lg-6">
+                                        <input
+                                            class="form-control form-control-sm fw-bold border border-secondary-subtle"
+                                            type="tel" placeholder="Phonenumber*" aria-label="ph number" required>
+
+                                    </div>
+                                    <div class=" col-12 col-md-12 col-lg-6">
+                                        <input
+                                            class="form-control form-control-sm fw-bold border border-secondary-subtle"
+                                            type="tel" placeholder="whatsapp number*" aria-label="number" required>
+
+                                    </div>
+
+                                </div>
+                                <div class="row justify-content-center g-3 mb-4">
+                                    <div class=" col-12 col-md-12 col-lg-6">
+                                        <input
+                                            class="form-control form-control-sm fw-bold border border-secondary-subtle"
+                                            type="text" placeholder="Travel Destination*" aria-label="destination"
+                                            required>
+
+                                    </div>
+                                    <div class=" col-12 col-md-12 col-lg-6">
+                                        <input
+                                            class="form-control form-control-sm fw-bold border border-secondary-subtle"
+                                            type="date" placeholder="Date of travel*" aria-label="date" required>
+                                    </div>
+
+                                </div>
+                                <div class="row justify-content-center g-3 mb-4">
+                                    <div class=" col-12 col-md-12 col-lg-6">
+                                        <input
+                                            class="form-control form-control-sm fw-bold border border-secondary-subtle"
+                                            type="number" placeholder="No.of.people*" aria-label="number" required>
+
+                                    </div>
+                                    <div class=" col-12 col-md-12 col-lg-6">
+                                        <select
+                                            class="form-select form-select-sm fw-medium border border-secondary-subtle">
+                                            <option selected>Vacation type*</option>
+                                            <option value="">Honey moon trip</option>
+                                            <option value="">Family trip</option>
+                                            <option value="">Friends trip</option>
+                                            <option value="">Corporate trip</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="d-grid g-3  col-12 col-md-4 col-lg-4 mx-auto">
+                                    <button class="btn btn-warning"> SUBMIT </button>
                                 </div>
                             </form>
+
                         </div>
 
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- blog section -->
+        <section id="blog">
+            <div class="container h-100 mx-auto my-5">
+
+                <h2 class="fw-bold text-center  mb-4 fs-md-1 fs-lg-1"> Latest Blogs </h2>
+                <!-- slide start -->
+                <!-- slide for blogs -->
+
+                <div id="cardslider" class="carousel slide" data-bs-ride="false">
+
+                    <!-- dots for slide -->
+                    <div class="carousel-indicators ">
+                        <button data-bs-target="#cardslider" data-bs-slide-to="0" class="active bg-dark mb-4"></button>
+                        <button data-bs-target="#cardslider" data-bs-slide-to="1" class="bg-dark mb-4"></button>
+                    </div>
+
+                    <div class="carousel-inner">
+                        <!-- slide-1 -->
+                        <div class="carousel-item active">
+
+                            <div class="row g-3 justify-content-center">
+
+                                <div class="col-10  col-md-8 col-lg-4   ">
+                                    <div class="card h-100">
+                                        <div class="blog-img-box mt-2">
+                                            <img src="images/netherland.jpg" alt="" class="blog-img">
+                                        </div>
+                                        <h3 class="text-center fs-2"> Best time to Travel... </h3>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-10  col-md-8     col-lg-4    ">
+                                    <div class="card h-100">
+                                        <div class="blog-img-box mt-2">
+                                            <img src="images/k1.jpg" alt="" class="blog-img">
+                                        </div>
+                                        <h3 class="text-center fs-2"> Travelling guide... </h3>
+                                    </div>
+                                </div>
+
+                                <div class="col-10  col-md-8  col-lg-4 ">
+                                    <div class="card h-100">
+                                        <div class="blog-img-box mt-2">
+                                            <img src="images/barcelona.jpg" alt="" class="blog-img">
+                                        </div>
+                                        <h3 class="text-center fs-2"> To Barcelona trip ... </h3>
+                                    </div>
+                                </div>
+
+                                <div class="d-grid g-1 col-12 col-md-6 col-lg-4  mt-5   mx-auto">
+                                    <button class="btn btn-warning fw-bold"> BLOGS </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- slide-2 -->
+                        <div class="carousel-item">
+
+                            <div class="row g-3  justify-content-center">
+
+                                <div class="col-10  col-md-8 col-lg-4 ">
+                                    <div class="card h-100">
+                                        <div class="blog-img-box mt-2">
+                                            <img src="images/greece.jpg" alt="" class="blog-img">
+                                        </div>
+                                        <h3 class="text-center fs-2"> Best time to Travel... </h3>
+                                    </div>
+                                </div>
+
+                                <div class="col-10   col-md-8 col-lg-4 ">
+                                    <div class="card h-100">
+                                        <div class="blog-img-box mt-2">
+                                            <img src="images/asia.jpg" alt="" class="blog-img">
+                                        </div>
+                                        <h3 class="text-center fs-2"> Travelling guide... </h3>
+                                    </div>
+                                </div>
+
+                                <div class="col-10 col-md-8 col-lg-4  ">
+                                    <div class="card h-100">
+                                        <div class="blog-img-box mt-2">
+                                            <img src="images/mal.jpg" alt="" class="blog-img">
+                                        </div>
+                                        <h3 class="text-center fs-2"> To maldives trip ... </h3>
+                                    </div>
+                                </div>
+
+                                <div class="d-grid g-3 mt-4 col-12 col-md-6 col-lg-4 mx-auto">
+                                    <button class="btn btn-warning fw-bold mt-3"> BLOGS </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- arrow mark -->
+                        <button class="carousel-control-prev arrow-btn" data-bs-target="#cardslider"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+
+                        <button class="carousel-control-next arrow-btn" data-bs-target="#cardslider"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!--  modal  -->
+        <section>
+            <div class="modal fade" id="enquiremodal" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                    <div class="modal-content">
+                        <form>
+
+                            <div class="modal-header border-0 m-1 bg-warning">
+                                <h3 class="modal-tittle fs-3 text-center w-100"> ENQUIRE NOW </h3>
+                                <button type="button" class="btn-close " data-bs-dismiss="modal"> </button>
+                            </div>
+                            <div class="modal-body border-0">
+                                <div class="row justify-content-center gap-3">
+                                    <div class=" col-10  col-lg-12">
+                                        <input
+                                            class="form-control form-control-sm fw-bold border border-secondary-subtle"
+                                            type="text" placeholder="name*" aria-label="name" required>
+
+                                    </div>
+                                    <div class="col-10  col-lg-12">
+                                        <input
+                                            class="form-control form-control-sm fw-bold border border-secondary-subtle"
+                                            type="email" placeholder="Mail*" aria-label="mail" required>
+
+                                    </div>
+                                    <div class=" col-10  col-lg-12">
+                                        <input
+                                            class="form-control form-control-sm fw-bold border border-secondary-subtle"
+                                            type="tel" placeholder="whatsapp number*" aria-label="number" required>
+
+                                    </div>
+                                    <div class=" col-10  col-lg-12">
+                                        <input
+                                            class="form-control form-control-sm fw-bold border border-secondary-subtle"
+                                            type="text" placeholder="Travel Destination*" aria-label="destination"
+                                            required>
+
+                                    </div>
+                                    <div class=" col-10 col-lg-12">
+                                        <input
+                                            class="form-control form-control-sm fw-bold border border-secondary-subtle"
+                                            type="date" placeholder="Date of travel*" aria-label="date" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer border-0">
+                                <div class="d-grid g-1 col-10 col-lg-12 mx-auto">
+                                    <button class="btn btn-warning fw-bold"> SUBMIT </button>
+                                </div>
+
+                            </div>
+                        </form>
                     </div>
 
                 </div>
 
-            </section>
-        </main>
-        <footer>
-            <section id="contact">
-                <div class="container h-100  my-5 bg-light">
-                    <div class="d-flex justify-content-evenly  mx-auto">
-                        <div class="text-center mt-5 p-2">
-                            <h2 class="fs-5"> HEAD OFFICE </h2>
-                            <hr class="w-100  border-3 border-dark ">
-                            <ul class="fs-6 align-items-center" style="list-style: none;">
-                                <li> TRAVO agency </li>
-                                <li> Anna nagar east</li>
-                                <li> Thirupathoor </li>
-                                <li> chennai-600001 </li>
-                            </ul>
-                        </div>
-                        <div class="text-center mt-5 p-2">
-                            <h2 class="fs-5"> CORPORATE OFFICE </h2>
-                            <hr class="w-100  border-3 border-dark ">
-                            <ul class="fs-6 align-items-center" style="list-style: none;">
-                                <li> TRAVO agency </li>
-                                <li> Barathi nagar east</li>
-                                <li> ECR </li>
-                                <li> chennai-600001 </li>
-                            </ul>
-                        </div>
-                        <div class="text-center mt-5 p-2">
-                            <h2 class="fs-5"> BRANCHES OF US </h2>
-                            <hr class="w-100  border-3 border-dark ">
-                            <ul class="fs-6 align-items-center mt-3 " style="list-style: none;">
-                                <li> chennai </li>
-                                <li> coimbatore</li>
-                                <li> madurai </li>
-                                <li> kerala </li>
-                                <li> thirupur </li>
-                                <li> dindigul</li>
-                                <li> salem </li>
-                                <li> karurr </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <br><br>
-                    <div
-                        class="d-flex justify-content-evenly align-items-center flex-wrap flex-md-nowrap ms-4 gap-3 mb-3 mx-auto">
+            </div>
 
-                        <div class="justify-content-center mb-2">
-                            <div class="border-start border-2 border-secondary me-2" style="height:60px;">
-                                <h4 class="ms-4 fs-5 fw-medium"> Call us</h4>
-                                <h4 class="ms-4 fs-5 fw-medium" style="font-family:cursive;"> +91 9000004488</h4>
-                            </div>
-                        </div>
-                        <div class="justify-content-center mb-2 ms-4">
-                            <div class="border-start border-2 border-secondary me-2" style="height:60px;">
-                                <h4 class="ms-4 fs-5 fw-medium"> Email</h4>
-                                <h4 class="ms-4 fs-5 fw-medium"> travo123@gmail.com</h4>
-                            </div>
-                        </div>
-                        <div class="justify-content-center mb-2 ms-2 ">
-                            <div class="border-start border-2 border-secondary me-2" style="height:60px;">
-                                <h4 class="ms-4 fs-5 fw-medium "> Follow us</h4>
-                                <ul class="icons d-flex justify-content-center align-items-center gap-3"
-                                    style="list-style: none;">
-                                    <li><img src="images/facebook.png" alt="" width="30px" height="30px"></li>
-                                    <li> <img src="images/instagram.png" alt="" width="30px" height="30px"></li>
-                                    <li> <img src="images/youtube.png" alt="" width="30px" height="30px"> </li>
-                                    <li> <img src="images/linkedin.png" alt="" width="30px" height="30px"></li>
-                                </ul>
-                            </div>
-                        </div>
+        </section>
+    </main>
+    <footer>
+        <section id="contact">
+            <div class="container h-100  my-5 bg-light">
+                <div class=" row d-flex justify-content-evenly  mx-auto">
+                    <div class="col-12 col-lg-4 text-center mt-5 p-2">
+                        <h2 class="fs-5"> HEAD OFFICE </h2>
+                        <hr class=" border-3 border-dark  m-auto  " style="width: 70%;">
+                        <ul class="fs-6 align-items-center m-1" style="list-style: none;">
+                            <li> TRAVO agency </li>
+                            <li> Anna nagar east</li>
+                            <li> Thirupathoor </li>
+                            <li> chennai-600001 </li>
+                        </ul>
                     </div>
-                    <div class="text-center mx-auto my-5">
-                        <small> copyright &copy;2025 by travo pvt.Ltd </small>
-                        <small> Privacy Policy | Terms & Conditions | Cancellation & Refund Policy</small>
+                    <div class=" col-12 col-lg-4   text-center mt-5 p-2">
+                        <h2 class="fs-5"> CORPORATE OFFICE </h2>
+                        <hr class="  border-3 border-dark  m-auto  " style="width: 70%;">
+                        <ul class="fs-6 align-items-center m-1" style="list-style: none;">
+                            <li> TRAVO agency </li>
+                            <li> MGR nagar east</li>
+                            <li> ECR </li>
+                            <li> chennai-600001 </li>
+                        </ul>
+                    </div>
+                    <div class=" col-12 col-lg-4    text-center mt-5 p-2">
+                        <h2 class="fs-5"> BRANCHES OF US </h2>
+                        <hr class=" border-3 border-dark  m-auto  " style="width: 70%;">
+                        <ul class="fs-6 align-items-center m-1" style="list-style: none;">
+                            <li> chennai </li>
+                            <li> coimbatore</li>
+                            <li> madurai </li>
+                            <li> kerala </li>
+                            <li> thirupur </li>
+                            <li> dindigul</li>
+                            <li> salem </li>
+                            <li> karurr </li>
+                        </ul>
                     </div>
                 </div>
+                <br><br>
+                <div class=" row d-flex justify-content-evenly align-items-center  ms-4 gap-3 mb-3 mx-auto">
+
+                    <div class="  col-12 col-lg-4 text-center mb-2">
+
+                        <h4 class="ms-4 fs-5 fw-medium"> Call us</h4>
+                        <h4 class="ms-4 fs-5 fw-medium" style="font-family:cursive;"> +91 9000004488</h4>
+
+                    </div>
+                    <div class="  col-12 col-lg-4 text-center mb-2 ">
+
+                        <h4 class="ms-4 fs-5 fw-medium "> Email</h4>
+                        <h4 class="ms-4 fs-5 fw-medium"> travo123@gmail.com</h4>
+
+                    </div>
+                    <div class="  col-12 col-lg-4  text-center mb-2 ">
+
+                        <h4 class="ms-auto fs-5 fw-medium "> Follow us</h4>
+                        <ul class="icons d-flex justify-content-center align-items-center gap-3"
+                            style="list-style: none;">
+                            <li><img src="images/facebook.png" alt="" width="30px" height="30px"></li>
+                            <li> <img src="images/instagram.png" alt="" width="30px" height="30px"></li>
+                            <li> <img src="images/youtube.png" alt="" width="30px" height="30px"> </li>
+                            <li> <img src="images/linkedin.png" alt="" width="30px" height="30px"></li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="text-center mx-auto my-5">
+                    <small> copyright &copy;2025 by travo pvt.Ltd </small>
+                    <small> Privacy Policy | Terms & Conditions | Cancellation & Refund Policy</small>
+                </div>
+            </div>
 
 
 
-            </section>
+        </section>
 
-        </footer>
-    </div>
+    </footer>
+
 
 
 
