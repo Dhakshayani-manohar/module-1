@@ -32,7 +32,7 @@
         }
 
         .navbar-nav {
-            gap: 30px;
+            gap: 12px;
             font-family: monospace;
             letter-spacing: 1.2px;
 
@@ -46,7 +46,7 @@
         }
 
         a:hover {
-            border-bottom: 3px solid chocolate
+            border-bottom: 3px solid chocolate;
         }
 
         .bg-slide {
@@ -118,10 +118,7 @@
         }
 
         .container-grid {
-
             padding: 40px;
-
-
         }
 
         h2 {
@@ -132,8 +129,31 @@
 
         .card-container {
             border: px solid;
-            gap: 10px;
-            box-shadow: 7px 7px 12px #1f1e1e88;
+            gap: 5px;
+            box-shadow: 7px 7px 12px #4f4d4d88;
+        }
+        .icon-container:hover,
+        .card-container:hover {
+            transform: translateY(-8px);
+            transition: 0.3s ease;
+        }
+        .icon-container{
+            height:150px;
+            padding: 8px;
+        }
+
+        .card-step {
+            transition: transform 0.3s ease;
+        }
+
+
+        .step-up {
+            transform: translateY(-50px);
+        }
+
+
+        .step-down {
+            transform: translateY(60px);
         }
 
         .stars {
@@ -200,6 +220,7 @@
                     <ul class="navbar-nav mx-auto fs-5 fw-bold">
                         <li class="nav-item"> <a class="nav-link" href="#home"> HOME</a></li>
                         <li class="nav-item"> <a class="nav-link" href="#about"> ABOUT</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="#destination"> DESTINATIONS</a></li>
                         <li class="nav-item"> <a class="nav-link" href="#page"> PAGES</a></li>
                         <li class="nav-item"> <a class="nav-link" href="#blog"> BLOG</a></li>
                         <li class="nav-item"> <a class="nav-link" href="#contact"> CONTACTS</a></li>
@@ -227,7 +248,8 @@
                             <h1 class="card-tittle fs-1 fw-bold mt-4 text-white"> Discover the World's <span
                                     style="color: rgb(228, 72, 15);">
                                     Hidden </span>Wonders. </h1>
-                            <h3 class="card-text fs-5 fs-md-3 fs-lg-3 mt-5 fst-italic lh-base text-white"> Travel is not just about
+                            <h3 class="card-text fs-5 fs-md-3 fs-lg-3 mt-5 fst-italic lh-base text-white"> Travel is not
+                                just about
                                 reaching
                                 a
                                 destination, but about
@@ -280,7 +302,7 @@
             </div>
         </section>
         <!-- top destination grid -->
-        <section id="about">
+        <section id="destination">
             <div class="container  min-vh-100 mx-auto my-3">
                 <h2 class="fw-bold text-center  mb-4 fs-md-1 fs-lg-1"> TOP DESTINATIONS</h2>
                 <div class="container-grid  mx-auto my-5  ">
@@ -289,7 +311,7 @@
                             <div class=" img-box position-relative ">
                                 <img src="images/n1.jpg" alt="" class="image rounded-4">
 
-                                <h2 class="position-absolute bottom-0 start-0  fw-bold fs-5" 
+                                <h2 class="position-absolute bottom-0 start-0  fw-bold fs-5"
                                     style="color:#FE0F65; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">
                                     NEWYORK </h2>
                             </div>
@@ -359,49 +381,63 @@
             </div>
         </section>
 
-        <section>
+        <section id="about">
 
 
             <!--  card section -->
 
-            <div class="container  h-100  mx-auto my-5  " id="page">
-                <div class="row g-3 fs-6 fs-lg-5 my-5 text-center mt-3 mb-3 ">
+            <div class="container  h-100  mx-auto my-5 ">
+                <h2 class="fw-bold text-center  mb-4 fs-md-1 fs-lg-1">OUR POPULAR TOUR TYPES </h2>
 
-                    <div class=" col-10  col-md-6  col-lg-4  mx-auto my-5">
-                        <div class="card-container rounded-4 " style=" height: 250px;">
 
-                            <img src="images/tourism.png" alt="" class="card-img mt-4"
-                                style="width: 80px; height: 80px;">
-                            <h2 class="card-tittle mt-3"> Abroad trips </h2>
-                            <h3 class="card-text lead mt-3"> For the last decade,Travo have organized more than
-                                50,000
-                                international itineraries</h3>
+                <div class="row g-1 fs-6 fs-lg-5 my-5 mt-3 mb-3 text-dark">
+
+                    <div class=" col-6  col-md-6 col-lg-3  mx-auto my-5 ">
+                        <div
+                            class="icon-container d-flex justify-content-center align-items-center card-step  step-up mb-2  gap-2 bg-danger-subtle rounded-2 ">
+                            <img src="images/plane.png" alt="" class="card-img" style="width: 70px; height: 70px;">
+                            <div>
+                                <p class="mt-3"><span class="card-tittle fw-bold fs-5 text-danger "> Flight </span>
+                                    Comfortable and affordable flights tailored to your journey</p>
+                            </div>
                         </div>
                     </div>
 
 
-                    <div class=" col-10  col-md-6 col-lg-4 mx-auto my-5">
-                        <div class="card-container rounded-4" style=" height: 250px;">
-                            <img src="images/pin.png" alt="" class="card-img mt-4" style="width: 80px; height: 80px;">
-                            <h2 class="card-tittle mt-3"> Experiences </h2>
-                            <h3 class="card-text lead mt-3"> Each and every itinerary is customized according to the
-                                taste of
-                                the customers.</h3>
+                    <div class=" col-6  col-md-6 col-lg-3   mx-auto my-5">
+                        <div
+                            class="icon-container  d-flex justify-content-center align-items-center card-step  step-down mb-2  gap-2 bg-danger-subtle rounded-2 ">
+                            <img src="images/mountain.png" alt="" class="card-img " style="width: 70px; height: 70px;">
+                            <div>
+                                <p class="mt-3"> <span class="card-tittle fw-bold fs-5 text-danger">Trecking</span>
+                                    Adventure trails through nature’s most breathtaking landscapes</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-6  col-md-6 col-lg-3  mx-auto my-5   ">
+                        <div
+                            class="icon-container d-flex justify-content-center align-items-center card-step step-up mb-2  gap-2 bg-danger-subtle rounded-2 ">
+                            <img src="images/freight-shipping.png" alt="" class="card-img"
+                                style="width: 70px; height: 70px;">
+                            <div>
+                                <p class="mt-3"><span class="card-tittle fw-bold fs-5 text-danger "> Sea Tour </span>
+                                    Relaxing ocean adventures on stunning waters.</p>
+                            </div>
                         </div>
                     </div>
 
 
-                    <div class=" col-10  col-md-6 col-lg-4 mx-auto my-5">
-                        <div class="card-container rounded-4" style=" height: 250px;">
-                            <img src="images/photograph.png" alt="" class="card-img mt-4"
-                                style="width: 80px; height: 80px;">
-                            <h2 class="card-tittle mt-3"> Happy travellers </h2>
-                            <h3 class="card-text lead mt-3"> Travo holds record of great customer satisfaction and
-                                all
-                                customers are retained with us</h3>
+                    <div class=" col-6  col-md-6 col-lg-3   mx-auto my-5">
+                        <div
+                            class="icon-container  d-flex justify-content-center align-items-center card-step step-down bg-danger-subtle rounded-2 gap-2">
+                            <img src="images/globe.png" alt="" class="card-img " style="width: 60px; height: 60px;">
+                            <div>
+                                <p class="mt-3"> <span class="card-tittle fw-bold fs-5 text-danger"> World Tour
+                                    </span>
+                                    Explore iconic destinations across the globe with ease</p>
+                            </div>
                         </div>
                     </div>
-
 
 
                 </div>
@@ -435,15 +471,15 @@
         <section>
             <div class="container  h-100  mx-auto my-5  ">
                 <div>
-                    <h2 class="fw-bold text-center  mb-4 fs-md-1 fs-lg-1"> OUR TESTIMONIALS </h2>
+                    <h2 class="fw-bold text-center  mb-4 fs-md-1 fs-lg-1"> TESTIMONIALS </h2>
                     <div class="row ">
                         <div class="d-flex justify-content-center ">
-                            
-                                <div class=" col-lg-6 col-md-6 d-none d-lg-flex">
-                                    <img src="images/side image.jpg" alt="" class="side-img w-100 h-100 ">
-                                </div>
 
-                            
+                            <div class=" col-lg-6 col-md-6 d-none d-lg-flex">
+                                <img src="images/side image.jpg" alt="" class="side-img w-100 h-100 ">
+                            </div>
+
+
 
 
                             <div class="row  ">
@@ -804,7 +840,7 @@
                         </ul>
                     </div>
                     <div class=" col-12 col-lg-4    text-center mt-5 p-2">
-                        <h2 class="fs-5"> BRANCHES OF US </h2>
+                        <h2 class="fs-5"> BRANCHES </h2>
                         <hr class=" border-3 border-dark  m-auto  " style="width: 70%;">
                         <ul class="fs-6 align-items-center m-1" style="list-style: none;">
                             <li> chennai </li>
